@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIP1101 Lecture 5: CSS3 Part 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0 20px;
+            padding: 0 0 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h1 {
+            color: #1a237e;
+            margin: 10px 0;
+        }
+        
+        h2 {
+            color: #283593;
+            margin: 25px 0 15px;
+            padding: 0 0 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        h3 {
+            color: #3949ab;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 0 0 15px;
+        }
+        
+        .note {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 15px 0;
+            border-left: 3px solid #2196f3;
+        }
+        
+        .example-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        .code {
+            font-family: monospace;
+            background: #f1f8e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .code-block {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        ul {
+            margin: 0 0 15px 20px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .color-example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+        }
+        
+        .border-example {
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CIP1101 Lecture 5: CSS3 Part 1</h1>
+        <p>Topic: CSS Fundamentals</p>
+    </header>
+    
+    <section>
+        <h2>Introduction to CSS3</h2>
+        <p>Cascading Style Sheets (CSS) create a consistent look across webpages and separate structure from presentation.</p>
+        
+        <ul>
+            <li>CSS Level 1 published in 1996</li>
+            <li>CSS Level 2 published in 1998</li>
+            <li>CSS3 is modular with over 50 modules</li>
+            <li>CSS3 is backward compatible with CSS 2.1</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>CSS Solved a Big Problem</h2>
+        <p>HTML was never intended to contain formatting tags. The addition of tags like &lt;font&gt; created challenges:</p>
+        
+        <ul>
+            <li>Maintaining large websites became difficult</li>
+            <li>Style information was duplicated on every page</li>
+            <li>W3C created CSS to solve these problems</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>CSS Syntax and Selectors</h2>
+        <p>A CSS rule-set consists of a selector and a declaration block:</p>
+        
+        <div class="code-block">
+            selector {<br>
+            &nbsp;&nbsp;property: value;<br>
+            }
+        </div>
+        
+        <h3>Element Selector</h3>
+        <div class="code-block">
+            p {<br>
+            &nbsp;&nbsp;text-align: center;<br>
+            &nbsp;&nbsp;color: red;<br>
+            }
+        </div>
+        
+        <h3>ID Selector</h3>
+        <div class="code-block">
+            #para1 {<br>
+            &nbsp;&nbsp;text-align: center;<br>
+            &nbsp;&nbsp;color: red;<br>
+            }
+        </div>
+        
+        <h3>Class Selector</h3>
+        <div class="code-block">
+            .center {<br>
+            &nbsp;&nbsp;text-align: center;<br>
+            &nbsp;&nbsp;color: red;<br>
+            }
+        </div>
+        
+        <h3>Grouping Selectors</h3>
+        <div class="code-block">
+            h1, h2, p {<br>
+            &nbsp;&nbsp;text-align: center;<br>
+            &nbsp;&nbsp;color: red;<br>
+            }
+        </div>
+    </section>
+    
+    <section>
+        <h2>CSS Comments</h2>
+        <div class="code-block">
+            /* This is a single-line comment */<br><br>
+            /* This is<br>
+            a multi-line<br>
+            comment */
+        </div>
+    </section>
+    
+    <section>
+        <h2>Three Ways to Insert CSS</h2>
+        
+        <h3>1. External Style Sheet</h3>
+        <div class="code-block">
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
+            &lt;/head&gt;
+        </div>
+        
+        <h3>2. Internal Style Sheet</h3>
+        <div class="code-block">
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;style&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;body { background-color: linen; }<br>
+            &nbsp;&nbsp;&lt;/style&gt;<br>
+            &lt;/head&gt;
+        </div>
+        
+        <h3>3. Inline Styles</h3>
+        <div class="code-block">
+            &lt;h1 style="color:blue;margin-left:30px;"&gt;<br>
+            &nbsp;&nbsp;This is a heading<br>
+            &lt;/h1&gt;
+        </div>
+        
+        <h3>Cascading Order</h3>
+        <ol>
+            <li>Inline styles</li>
+            <li>Internal styles</li>
+            <li>External styles</li>
+            <li>Browser settings</li>
+            <li>Browser defaults</li>
+        </ol>
+    </section>
+    
+    <section>
+        <h2>CSS Colors</h2>
+        
+        <div class="color-example">
+            <div class="color-box" style="background-color: DodgerBlue; color: white;">
+                Background Color
+            </div>
+            <div class="color-box" style="color: Tomato;">
+                Text Color
+            </div>
+            <div class="color-box" style="border: 2px solid DodgerBlue;">
+                Border Color
+            </div>
+        </div>
+        
+        <h3>Color Values</h3>
+        <ul>
+            <li>RGB: <span class="code">rgb(255, 99, 71)</span></li>
+            <li>HEX: <span class="code">#ff6347</span></li>
+            <li>HSL: <span class="code">hsl(9, 100%, 64%)</span></li>
+            <li>RGBA: <span class="code">rgba(255, 99, 71, 0.5)</span></li>
+            <li>HSLA: <span class="code">hsla(9, 100%, 64%, 0.5)</span></li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>CSS Backgrounds</h2>
+        
+        <div class="code-block">
+            body {<br>
+            &nbsp;&nbsp;background-image: url("img_tree.png");<br>
+            &nbsp;&nbsp;background-repeat: no-repeat;<br>
+            &nbsp;&nbsp;background-position: right top;<br>
+            &nbsp;&nbsp;background-attachment: fixed;<br>
+            }
+        </div>
+        
+        <h3>Shorthand Property</h3>
+        <div class="code-block">
+            body {<br>
+            &nbsp;&nbsp;background: #ffffff url("img_tree.png") no-repeat right top;<br>
+            }
+        </div>
+    </section>
+    
+    <section>
+        <h2>CSS Borders</h2>
+        
+        <div class="border-example" style="border-style: dotted;">Dotted border</div>
+        <div class="border-example" style="border-style: dashed;">Dashed border</div>
+        <div class="border-example" style="border-style: solid;">Solid border</div>
+        <div class="border-example" style="border-style: double;">Double border</div>
+        <div class="border-example" style="border-style: groove;">Groove border</div>
+        <div class="border-example" style="border-style: ridge;">Ridge border</div>
+        
+        <h3>Border Properties</h3>
+        <div class="code-block">
+            p {<br>
+            &nbsp;&nbsp;border: 5px solid red; /* Shorthand */<br>
+            &nbsp;&nbsp;border-radius: 10px; /* Rounded corners */<br>
+            }
+        </div>
+    </section>
+    
+    <section>
+        <h2>Height and Width</h2>
+        
+        <div class="code-block">
+            div {<br>
+            &nbsp;&nbsp;height: 200px;<br>
+            &nbsp;&nbsp;width: 50%;<br>
+            &nbsp;&nbsp;max-width: 600px;<br>
+            }
+        </div>
+    </section>
+</body>
+</html>

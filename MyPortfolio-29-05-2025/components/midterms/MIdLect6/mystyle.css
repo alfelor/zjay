@@ -1,0 +1,152 @@
+.body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.image1 {
+    border: 2px solid black;
+    width: 250px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.image2 {
+    width: 480px;
+    height: 480px;
+    border: 2px solid black;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.image3 {
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 250px;
+    height: auto;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.image4 {
+    border: 2px solid black;
+    border-radius: 20px 0px 20px 0px;
+    width: 250px;
+    height: auto;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.image5 {
+    border: 2px solid black;
+    width: 250px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.image6-container {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.image6 {
+    border: 2px solid black;
+    width: 280px;
+    height: auto;
+    float: right;
+    margin-left: 15px;
+}
+
+.image7 {
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 250px;
+    height: auto;
+    margin-left: 50px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.image7:hover {
+    transform: scale(1.1);
+}
+
+.image8 {
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 250px;
+    height: auto;
+    margin-left: 50px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.7);
+    margin-bottom: 40px;
+}
+
+.image9-container {
+    display: flex;
+    justify-content: center;
+}
+
+.housing1, .housing2 {
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 20px;
+    max-width: 800px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.housing1 pre, .housing2 pre {
+    margin: 0;
+    text-align: left;
+}
+
+.image9 {
+    float: left;
+    width: 250px;
+    height: 250px;
+    shape-outside: circle(45%);
+    clip-path: circle(40%);
+}
+
+.image10 {
+    float: left;
+    width: 250px;
+    height: auto;
+    shape-outside: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.masked-text {
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+    background-image: url(https://www.rappler.com/tachyon/2021/07/mayon-volcano-shutterstock-ls.jpg);
+    background-position: center;
+    background-size: cover;
+    color: transparent;
+    -webkit-background-clip: text;          
+}
+
+.imagemap-button {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.imagemap-button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    background-color: grey;
+}

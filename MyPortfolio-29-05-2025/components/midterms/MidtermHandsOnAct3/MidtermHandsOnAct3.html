@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Personal Data Sheet</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">LOGO</div>
+
+            <div class="head-title">
+                <h2>SAMPLE UNIVERSITY</h2>
+                <p>ENROLLMENT SYSTEM</p>
+                <h1>PERSONAL DATA SHEET</h1>
+                <p><em>(Graduate School, Law, Medicine)</em></p>
+            </div>
+            
+            <div class="head-info">
+                <div class="field-line">
+                    <label>Program:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Student #:</label>
+                    <input type="text">
+                </div>
+            </div>
+        </header>
+
+        <div class="name-section">
+            <div class="name-fields">
+                <div class="name-line">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text" class="auxiliary-input">
+                </div>
+                <div class="name-labels">
+                    <label>SURNAME</label>
+                    <label>GIVEN NAME</label>
+                    <label>MIDDLE NAME</label>
+                    <div class="auxiliary-label">
+                        <label>AUXILIARY NAME</label>
+                        <span class="small-text">(Sr, Jr, I, II, III, etc.)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <h3>STUDENT DETAILS:</h3>
+            <div class="field-line">
+                <label>City Address:</label>
+                <input type="text">
+            </div>
+            <div class="three-col">
+                <div class="field-line">
+                    <label>Zip Code:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Tel. No.:</label>
+                    <input type="tel">
+                </div>
+                <div class="field-line">
+                    <label>E-mail address:</label>
+                    <input type="email">
+                </div>
+            </div>
+            <div class="field-line">
+                <label>Home Address:</label>
+                <input type="text">
+            </div>
+            <div class="two-col">
+                <div class="field-line">
+                    <label>Zip Code:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Region:</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field-line">
+                    <label>Birthday:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Age:</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field-line">
+                    <label>Birthplace:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Religion:</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field-line">
+                    <label>Citizenship:</label>
+                    <input type="text">
+                </div>
+                <div class="field-line">
+                    <label>Sex:</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="field-line">
+                <label>If Alien, ACR # (see Registrar):</label>
+                <input type="text">
+            </div>
+
+            <div class="status-section">
+                <div class="legal-status">
+                    <label>Legal Status:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="citizen">
+                            <label for="citizen">Citizen of RP</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="permanent">
+                            <label for="permanent">Permanent Resident</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="permission1">
+                            <label for="permission1">Person granted permission to enter and<br>remain as a student in RP on a visa for<br>a defined period of time</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="permission2">
+                            <label for="permission2">Person granted permission to enter and<br>remain as a child or spouse of a worker<br>on a visa for a defined period of time</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="other">
+                            <label for="other">Other visa</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="unknown">
+                            <label for="unknown">Legal status not known</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="civil-status">
+                    <label>Civil Status:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="single">
+                            <label for="single">Single</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="married">
+                            <label for="married">Married</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="divorced">
+                            <label for="divorced">Divorced</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="widowed">
+                            <label for="widowed">Widowed</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="separated">
+                            <label for="separated">Separated</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-status">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="working">
+                        <label for="working">Working</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="not-working">
+                        <label for="not-working">Not Working</label>
+                    </div>
+                    <div class="field-line">
+                        <label>If working: Office/Bus. Tel. #:</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="parents-section">
+                <div class="parent-info">
+                    <h3>FATHER'S INFORMATION:</h3>
+                    <div class="field-line">
+                        <label>Surname:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>First Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Middle Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Auxiliary Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Occupation/Employment:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Educational Attainment:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Parent's Address:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Zip Code:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="parent-info">
+                    <h3>MOTHER'S INFORMATION:</h3>
+                    <div class="field-line">
+                        <label>Surname:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>First Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Middle Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Auxiliary Name:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Occupation/Employment:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Educational Attainment:</label>
+                        <input type="text">
+                    </div>
+                    <div class="field-line">
+                        <label>Parent's Tel. #:</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="guardian-section">
+                <h3>GUARDIAN'S INFORMATION: <span>(If Applicable)</span></h3>
+                <div class="two-col">
+                    <div class="guardian-left">
+                        <div class="field-line">
+                            <label>Surname:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>First Name:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Middle Name:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Auxiliary Name:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Occupation/Employment:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Off./Bus. Tel. #:</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="guardian-right">
+                        <div class="field-line">
+                            <label>Guardian's Address:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Zip Code:</label>
+                            <input type="text">
+                        </div>
+                        <div class="field-line">
+                            <label>Tel. #:</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
