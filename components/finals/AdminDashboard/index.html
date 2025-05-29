@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts for modern look -->    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chart.js CDN for statistical graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="font-family: 'Montserrat', 'Roboto', Arial, sans-serif;">    
+    <div class="wrapper">
+        <!-- Mobile Header -->
+        <header class="d-md-none mobile-header">
+            <div class="container-fluid px-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="brand m-0"><i class="bi bi-stars"></i> MINIOTEL</div>
+                    <button class="btn text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <div class="row g-0">
+
+            <!-- Mobile Sidebar -->
+            <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="mobileSidebar">
+                <div class="offcanvas-header">
+                    <div class="brand"><i class="bi bi-stars"></i> MINIOTEL</div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="mobileDashboardBtn" href="#dashboard" data-bs-dismiss="offcanvas">
+                                <i class="bi bi-house-door"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module1" data-bs-dismiss="offcanvas">
+                                <i class="bi bi-door-closed"></i> Room Module
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module2" data-bs-dismiss="offcanvas">
+                                <i class="bi bi-gem"></i> Amenities Module
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module3" data-bs-dismiss="offcanvas">
+                                <i class="bi bi-cash-coin"></i> Transaction Module
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop Sidebar -->
+            <nav class="col-md-2 d-none d-md-block sidebar py-4">
+                <div class="brand mb-4"><i class="bi bi-stars"></i> MINIOTEL</div>
+                <div class="position-sticky">                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="dashboardBtn" href="#dashboard"><i class="bi bi-house-door"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module1"><i class="bi bi-door-closed"></i> Room Module</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module2"><i class="bi bi-gem"></i> Amenities Module</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#module3"><i class="bi bi-cash-coin"></i> Transaction Module</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>            
+            <!-- Main Content -->
+            <main class="col-12 col-md-9 ms-sm-auto col-lg-10 px-3 px-md-4 py-4 mt-5 mt-md-0">
+                <div class="dashboard-card mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                        <div>
+                            <h2 class="mb-1" style="font-family: 'Montserrat', sans-serif; font-weight:700; letter-spacing:1px;">Welcome, Admin!</h2>
+                            <div class="text-secondary" style="font-family: 'Roboto', sans-serif; font-size:1.1rem;">Automate tasks and achieve more every day.</div>
+                        </div>
+                        <div class="badge bg-success bg-opacity-75 fs-6">70% of rooms available today</div>
+                    </div>
+                    <div class="d-flex gap-4 flex-wrap align-items-center justify-content-between">
+                        <div class="d-flex gap-4 flex-wrap flex-grow-1">
+                            <div class="stat-box p-3 rounded-4 text-center flex-fill">
+                                <div class="fs-4 fw-bold">3</div>
+                                <div class="small">Total Rooms</div>
+                            </div>
+                            <div class="stat-box p-3 rounded-4 text-center flex-fill">
+                                <div class="fs-4 fw-bold">2</div>
+                                <div class="small">Available</div>
+                            </div>
+                            <div class="stat-box p-3 rounded-4 text-center flex-fill">
+                                <div class="fs-4 fw-bold">1</div>
+                                <div class="small">Occupied</div>
+                            </div>                            <div class="stat-box p-3 rounded-4 text-center flex-fill">
+                                <div class="fs-4 fw-bold" id="todaysRevenue">₱7,300</div>
+                                <div class="small">Today's Revenue</div>
+                            </div>
+                        </div>
+                        <div class="calendar-card ms-4">
+                            <label for="calendarInput" class="fw-bold mb-2">Calendar</label>
+                            <div class="d-flex gap-2 align-items-center mb-2">
+                                <button class="today-btn" id="todayBtn">Today</button>
+                                <input type="date" class="form-control" id="calendarInput" style="max-width:180px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room Module with filter and Book Room -->
+                <div class="dashboard-card" id="module1">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="module-title"><i class="bi bi-door-closed"></i> Room Module</div>
+                        <button class="btn btn-book" data-bs-toggle="modal" data-bs-target="#bookRoomModal"><i class="bi bi-plus-circle"></i> Book Room</button>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <span class="filter-label">Search:</span>
+                        <input type="search" id="roomSearch" class="form-control w-auto ms-2" placeholder="Room No. or Type">
+                        <span class="summary-box ms-auto"><i class="bi bi-people"></i> Occupied: <span id="occupiedCount">1</span> / 3</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark rounded-3 overflow-hidden" id="roomTable">
+                            <thead>
+                                <tr>
+                                    <th>Room No.</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>101</td>
+                                    <td>Single</td>
+                                    <td><span class="badge bg-success">Available</span></td>
+                                    <td>₱2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>102</td>
+                                    <td>Double</td>
+                                    <td><span class="badge bg-danger">Occupied</span></td>
+                                    <td>₱4,500</td>
+                                </tr>
+                                <tr>
+                                    <td>103</td>
+                                    <td>Suite</td>
+                                    <td><span class="badge bg-success">Available</span></td>
+                                    <td>₱9,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Amenities Module with status -->
+                <div class="dashboard-card" id="module2">
+                    <div class="module-title"><i class="bi bi-gem"></i> Amenities Module</div>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex align-items-center justify-content-between">
+                            <span><i class="bi bi-droplet-half me-2"></i> Swimming Pool</span>
+                            <span class="amenity-status amenity-open">Open</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center justify-content-between">
+                            <span><i class="bi bi-heart-pulse-fill me-2"></i> Gym</span>
+                            <span class="amenity-status amenity-closed">Closed</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center justify-content-between">
+                            <span><i class="bi bi-flower1 me-2"></i> Spa</span>
+                            <span class="amenity-status amenity-open">Open</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Transaction Module with filter and summary -->
+                <div class="dashboard-card" id="module3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">                        <div class="module-title"><i class="bi bi-cash-coin"></i> Transaction Module</div>
+                        <span class="summary-box"> Total: ₱<span id="totalRevenue">7,300</span></span>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <span class="filter-label">Filter by Date:</span>
+                        <input type="date" id="txnDateFilter" class="form-control w-auto ms-2">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark rounded-3 overflow-hidden" id="txnTable">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Guest Name</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>                                
+                                <tr>
+                                    <td>TXN001</td>
+                                    <td>John Doe</td>
+                                    <td>2025-05-22</td>
+                                    <td>₱4,500</td>
+                                </tr>
+                                <tr>
+                                    <td>TXN002</td>
+                                    <td>Jane Smith</td>
+                                    <td>2025-05-22</td>
+                                    <td>₱2,800</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Statistical Graph Card -->
+                <div class="dashboard-card mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="module-title"><i class="bi bi-bar-chart-line"></i> Room Occupancy Trend</div>
+                        <span class="text-secondary small">Last 7 Days</span>
+                    </div>
+                    <canvas id="occupancyChart" height="80"></canvas>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Book Room Modal -->
+    <div class="modal fade" id="bookRoomModal" tabindex="-1" aria-labelledby="bookRoomModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookRoomModalLabel">Book a Room</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="bookRoomForm">
+              <div class="mb-3">
+                <label for="roomNo" class="form-label">Room No.</label>
+                <input type="text" class="form-control" id="roomNo" required>
+              </div>
+              <div class="mb-3">
+                <label for="guestName" class="form-label">Guest Name</label>
+                <input type="text" class="form-control" id="guestName" required>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" required>
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="amount" required>
+              </div>
+              <button type="submit" class="btn btn-book">Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/events.js"></script>
+</body>
+</html>

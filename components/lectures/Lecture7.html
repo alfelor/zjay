@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIP1101 Lecture 7: Bootstrap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0 20px;
+            padding: 0 0 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h1 {
+            color: #1a237e;
+            margin: 10px 0;
+        }
+        
+        h2 {
+            color: #283593;
+            margin: 25px 0 15px;
+            padding: 0 0 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        h3 {
+            color: #3949ab;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 0 0 15px;
+        }
+        
+        .note {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 15px 0;
+            border-left: 3px solid #2196f3;
+        }
+        
+        .example-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        .code {
+            font-family: monospace;
+            background: #f1f8e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .code-block {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        ul {
+            margin: 0 0 15px 20px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .grid-demo {
+            margin: 20px 0;
+            background: #e0e0e0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .grid-demo .row {
+            margin-bottom: 15px;
+        }
+        
+        .grid-demo .col {
+            background: #5c6bc0;
+            color: white;
+            padding: 10px;
+            border: 1px solid #3f51b5;
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #e8eaf6;
+        }
+        
+        .color-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CIP1101 Lecture 7: Bootstrap</h1>
+        <p>Topic: Responsive Web Design Framework</p>
+    </header>
+    
+    <section>
+        <h2>What is Bootstrap?</h2>
+        <p>Bootstrap is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.</p>
+        
+        <h3>Why Use Bootstrap?</h3>
+        <ul>
+            <li>Mobile-first approach</li>
+            <li>Excellent browser support</li>
+            <li>Easy to get started with HTML/CSS knowledge</li>
+            <li>Responsive design that works on all devices</li>
+            <li>Built-in components and utilities</li>
+            <li>Open source and free to use</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Getting Started with Bootstrap</h2>
+        
+        <h3>CDN Setup</h3>
+        <p>Add these links to your HTML head section:</p>
+        <div class="code-block">
+            &lt;!-- CSS --&gt;<br>
+            &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;<br><br>
+            &lt;!-- JS --&gt;<br>
+            &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+        </div>
+        
+        <h3>Basic Template</h3>
+        <div class="code-block">
+            &lt;!DOCTYPE html&gt;<br>
+            &lt;html lang="en"&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;title&gt;Bootstrap Page&lt;/title&gt;<br>
+            &nbsp;&nbsp;&lt;meta charset="utf-8"&gt;<br>
+            &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;<br>
+            &nbsp;&nbsp;&lt;!-- Bootstrap CSS CDN --&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&lt;div class="container"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My Bootstrap Page&lt;/h1&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Resize to see responsiveness!&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;!-- Bootstrap JS CDN --&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;
+        </div>
+    </section>
+    
+    <section>
+        <h2>Bootstrap Containers</h2>
+        
+        <h3>Fixed Container</h3>
+        <div class="example-container">
+            <div class="code-block">
+                &lt;div class="container"&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Content here --&gt;<br>
+                &lt;/div&gt;
+            </div>
+            <p>Responsive fixed-width container that changes at breakpoints.</p>
+        </div>
+        
+        <h3>Fluid Container</h3>
+        <div class="example-container">
+            <div class="code-block">
+                &lt;div class="container-fluid"&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Content here --&gt;<br>
+                &lt;/div&gt;
+            </div>
+            <p>Full-width container spanning the entire viewport.</p>
+        </div>
+        
+        <h3>Container Breakpoints</h3>
+        <table>
+            <tr>
+                <th>Screen Size</th>
+                <th>Container Width</th>
+            </tr>
+            <tr>
+                <td>&lt;576px</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>≥576px</td>
+                <td>540px</td>
+            </tr>
+            <tr>
+                <td>≥768px</td>
+                <td>720px</td>
+            </tr>
+            <tr>
+                <td>≥992px</td>
+                <td>960px</td>
+            </tr>
+            <tr>
+                <td>≥1200px</td>
+                <td>1140px</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Bootstrap Grid System</h2>
+        <p>The grid system uses a series of containers, rows, and columns to layout content.</p>
+        
+        <div class="grid-demo">
+            <h3>Basic Grid Structure</h3>
+            <div class="code-block">
+                &lt;div class="container"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col"&gt;Column 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col"&gt;Column 2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col"&gt;Column 3&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+            
+            <h3>Responsive Grid Classes</h3>
+            <ul>
+                <li><span class="code">.col-</span> (extra small devices)</li>
+                <li><span class="code">.col-sm-</span> (small devices ≥576px)</li>
+                <li><span class="code">.col-md-</span> (medium devices ≥768px)</li>
+                <li><span class="code">.col-lg-</span> (large devices ≥992px)</li>
+                <li><span class="code">.col-xl-</span> (extra large ≥1200px)</li>
+            </ul>
+            
+            <h3>Grid Examples</h3>
+            <div class="example-container">
+                <h4>Three Equal Columns</h4>
+                <div class="code-block">
+                    &lt;div class="row"&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col"&gt;.col&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col"&gt;.col&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col"&gt;.col&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </div>
+                
+                <h4>Responsive Columns</h4>
+                <div class="code-block">
+                    &lt;div class="row"&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-3"&gt;.col-sm-3&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </div>
+                
+                <h4>Two Unequal Columns</h4>
+                <div class="code-block">
+                    &lt;div class="row"&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="col-sm-8"&gt;.col-sm-8&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Bootstrap Utilities</h2>
+        
+        <h3>Colors</h3>
+        <div class="color-demo">
+            <div class="color-box" style="background-color: #0d6efd; color: white;">.bg-primary</div>
+            <div class="color-box" style="background-color: #198754; color: white;">.bg-success</div>
+            <div class="color-box" style="background-color: #0dcaf0; color: black;">.bg-info</div>
+            <div class="color-box" style="background-color: #ffc107; color: black;">.bg-warning</div>
+            <div class="color-box" style="background-color: #dc3545; color: white;">.bg-danger</div>
+            <div class="color-box" style="background-color: #6c757d; color: white;">.bg-secondary</div>
+            <div class="color-box" style="background-color: #212529; color: white;">.bg-dark</div>
+            <div class="color-box" style="background-color: #f8f9fa; color: black;">.bg-light</div>
+        </div>
+        
+        <h3>Text Colors</h3>
+        <div class="example-container">
+            <p class="text-primary">.text-primary</p>
+            <p class="text-success">.text-success</p>
+            <p class="text-info">.text-info</p>
+            <p class="text-warning">.text-warning</p>
+            <p class="text-danger">.text-danger</p>
+            <p class="text-secondary">.text-secondary</p>
+            <p class="text-dark">.text-dark</p>
+            <p class="text-body">.text-body</p>
+        </div>
+    </section>
+</body>
+</html>

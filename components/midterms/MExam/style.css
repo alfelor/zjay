@@ -1,0 +1,403 @@
+:root {
+    --black: #000000;
+    --dark-gray: #1a1a1a;
+    --gold: #d4af37;
+    --light-gold: #ffd700;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IM Fell English', serif;
+    line-height: 1.6;
+    color: var(--white);
+    background-color: var(--black);
+    overflow-x: hidden;
+}
+
+/* Cosmic Background Animation */
+.cosmic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--cosmic-blue), var(--cosmic-purple));
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--starlight), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, var(--starlight), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, var(--starlight), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, var(--starlight), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, var(--starlight), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s infinite;
+}
+
+.twinkling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white"/></svg>') repeat;
+    background-size: 100px 100px;
+    animation: twinkle 8s infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.2; }
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Navigation */
+.celestial-nav {
+    width: 280px;
+    background-color: var(--dark-gray);
+    padding: 0;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid var(--gold);
+    z-index: 1000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar */
+.celestial-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.celestial-nav::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+}
+
+.celestial-nav::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+}
+
+.moon-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    padding: 2rem 2rem 1rem;
+    background: linear-gradient(to bottom,
+        var(--dark-gray) 0%,
+        var(--dark-gray) 80%,
+        rgba(26, 26, 26, 0) 100%
+    );
+    z-index: 10;
+}
+
+.main-logo {
+    width: 70px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.moon-logo h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--gold);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.constellation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem 2rem;
+}
+
+.constellation-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.constellation-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.zodiac-symbol-nav {
+    color: var(--gold);
+    font-size: 1.2rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.constellation-link:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+/* Main Content */
+.celestial-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2rem;
+}
+
+.zodiac-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--gold);
+}
+
+.celestial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gold);
+}
+
+.zodiac-symbol {
+    margin-right: 1.5rem;
+}
+
+.zodiac-image {
+    width: 100px;
+    height: auto;
+}
+
+.zodiac-info h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.celestial-date {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.element-panel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.element-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.personality-traits h4,
+.strengths h4,
+.challenges h4,
+.mythology h4,
+.compatibility h4 {
+    margin: 1.5rem 0 1rem;
+}
+
+.zodiac-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.strengths-challenges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.strengths ul,
+.challenges ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.star {
+    color: var(--gold);
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .celestial-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+
+    .celestial-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .moon-logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .zodiac-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .strengths-challenges {
+        grid-template-columns: 1fr;
+    }
+}
+
+.zodiac-nav-image {
+    width: 24px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+/* Footer Styles */
+.celestial-footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 2rem 0;
+    border-top: 1px solid var(--gold);
+    margin-top: 2rem;
+    margin-left: 280px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-link {
+    color: var(--gold);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .celestial-footer {
+        margin-left: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
